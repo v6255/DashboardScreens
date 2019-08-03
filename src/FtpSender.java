@@ -16,6 +16,19 @@ public class FtpSender {
         String filePath = "E:\\vsilich\\JAVA\\screens\\4.png";
         String uploadPath = "4.png";
 */
+////
+        //
+        //
+        ///
+
+        //
+        //
+        //
+        //
+        //
+
+        System.out.println("safdaasfsa");
+
         String ftpUrl = "ftp://%s:%s@%s/%s;type=i";
 
         ftpUrl = String.format(ftpUrl, user, pass, host, uploadPath);
