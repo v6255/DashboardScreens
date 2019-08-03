@@ -24,7 +24,10 @@ public class FtpSender {
         //
         //
         //
-        /
+        //
+        //
+
+        System.out.println("safdaasfsa");
 
         String ftpUrl = "ftp://%s:%s@%s/%s;type=i";
 
