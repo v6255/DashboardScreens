@@ -7,14 +7,16 @@ import java.net.URLConnection;
 
 public class FtpSender {
 
-    public static void main(String[] args) {
-
+    public static void SendFile(String host, String user, String pass, String filePath, String uploadPath) {
+/*
         String ftpUrl = "ftp://%s:%s@%s/%s;type=i";
         String host = "ftp-srv63801.ht-systems.ru";
         String user = "srv63801_dash";
         String pass = "Jg7p73H5";
         String filePath = "E:\\vsilich\\JAVA\\screens\\4.png";
         String uploadPath = "4.png";
+*/
+        String ftpUrl = "ftp://%s:%s@%s/%s;type=i";
 
         ftpUrl = String.format(ftpUrl, user, pass, host, uploadPath);
         System.out.println("Upload URL: " + ftpUrl);
@@ -40,4 +42,9 @@ public class FtpSender {
         }
 
     }
+
+    public static void main(String[] args){
+        SendFile("ftp-srv63801.ht-systems.ru", "srv63801_dash", "Jg7p73H5", "E:\\vsilich\\JAVA\\screens\\4.png", "4.png");
+    }
+
 }
