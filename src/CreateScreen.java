@@ -9,8 +9,7 @@ public class CreateScreen {
         String Site = "http://dashboard:7080/hqu/wmvisualizer/wmvisualizer/player.hqu?layout=Zvezda";
         String Login = "hqadmin";
         String Password = "hqadmin";
-        String FileListJobs = "C:/Svodka";
-        String PathChromeDriver = "C:/Svodka/chromedriver.exe";
+        String PathChromeDriver = "C:/DashboardScreens/chromedriver.exe";
 
         System.setProperty("webdriver.chrome.driver", PathChromeDriver);
 
