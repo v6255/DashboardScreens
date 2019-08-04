@@ -29,17 +29,21 @@ public class GetUpdatesTlgrm {
         addfolder.mkdirs();
         File file = new File(FileListJobs + "/" + "message.log");
 
-        //ArrayList list_job_pref = getRunJob(file);
+        ArrayList list_job_pref = getRunJob(file);
+       //l/ System.out.println(list_job_prefI.
+        System.out.println(list_job_pref);
 
+          //      );
 
         FileWriter fw = new FileWriter(file);
         for (int i = 0; i < jobs.size(); i++) {
             //System.out.println(jobs.get(i).getText());
             String newLine = System.getProperty("line.separator");
-            //fw.write("{New_job}" + newLine + jobs.get(i) + newLine + newLine);
-            fw.write("New_job");
+            fw.write(jobs.get(i) + newLine);
+            //fw.write("New_job");
+            fw.flush();
         }
-       // ArrayList list_job_new = getRunJob(file);
+       ArrayList list_job_new = getRunJob(file);
 
         //подгружаем файл1 и запоминаем массив
         //заполняем массив новыми объектами
@@ -51,6 +55,8 @@ public class GetUpdatesTlgrm {
         // и отправляется http запрос
         in.close();
     }
+
+
         public static ArrayList getRunJob(File file) {
             try {
                 ArrayList list = new ArrayList();
@@ -59,7 +65,7 @@ public class GetUpdatesTlgrm {
                 BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
                 String strLine;
                 while ((strLine = br.readLine()) != null) {
-                    if (strLine.contains("RUNNING")) {
+                    if (strLine.contains("message")) {
                         String br1 = br.readLine();
                         String br2 = br.readLine();
                         list.add(strLine + " " + br1 + " " + br2);
