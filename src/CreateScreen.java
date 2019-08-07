@@ -14,7 +14,7 @@ public class CreateScreen {
         System.setProperty("webdriver.chrome.driver", PathChromeDriver);
 
         WebDriver driver = new ChromeDriver();
-
+        driver.manage().window().setSize(new Dimension(768, 1200));
         driver.get(Site);
         WebElement login = driver.findElement(By.name("j_username"));
         login.sendKeys(Login);
@@ -23,7 +23,7 @@ public class CreateScreen {
         password.sendKeys(Keys.ENTER);
         //WebDriverWait search_wait = new WebDriverWait(driver, 20);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("document.body.style.zoom='80%'");
+        js.executeScript("document.body.style.zoom='60%'");
         Thread.sleep(10000);
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         driver.close();
